@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header class="container-custom-cart">
+        <span class="logo"><h1><a href="/Home/Index">ELLA</a></h1></span>
+        <div class="cart">
+            <a href="/Home/Giohang">
+                <img src="~/Content/image/cart.jpg" class="cart-icon">
+                <span class="cart-count"></span>
+            </a>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

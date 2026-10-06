@@ -1,0 +1,607 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>ELLA Store</title>
+    <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+<body>
+    <!-- CHI TIẾT SẢN PHẨM -->
+    <div class="container-custom">
+        <div class="detail-wrapper">
+            <!-- ẢNH -->
+            <div class="detail-image">
+                <img src="~/Content/image/giay1.jpg" alt="Giày">
+            </div>
+            <!-- THÔNG TIN -->
+            <div class="detail-info">
+                <h2 class="shoe-name">
+                    Nike Air Force 1 All White
+                </h2>
+                <div class="shoe-price">
+                    2.500.000đ
+                </div>
+                <p style="color: #666; line-height: 1.6;">
+                    Dòng giày quốc dân với thiết kế da trắng cao cấp,
+                    bền bỉ và cực kỳ dễ phối đồ.
+                </p>
+                <!-- SIZE EU -->
+                <div class="size-section">
+                    <h4>Chọn Kích Cỡ (Size EU):</h4>
+                    <div class="size-options">
+                        <div class="size-box"
+                             onclick="selectSize(this)">
+                            39
+                        </div>
+                        <div class="size-box active"
+                             onclick="selectSize(this)">
+                            40
+                        </div>
+                        <div class="size-box"
+                             onclick="selectSize(this)">
+                            41
+                        </div>
+                        <div class="size-box"
+                             onclick="selectSize(this)">
+                            42
+                        </div>
+                    </div>
+                </div>
+                <!-- SIZE US -->
+                <div class="size-section">
+                    <h4>Chọn Kích Cỡ (Size US):</h4>
+                    <div class="size-options">
+                        <div class="size-box"
+                             onclick="selectSize(this)">
+                            7
+                        </div>
+                        <div class="size-box active"
+                             onclick="selectSize(this)">
+                            8
+                        </div>
+                        <div class="size-box"
+                             onclick="selectSize(this)">
+                            9
+                        </div>
+                        <div class="size-box"
+                             onclick="selectSize(this)">
+                            10
+                        </div>
+                    </div>
+                </div>
+                <!-- NÚT THÊM GIỎ -->
+                <button class="btn"
+                        style="width: 250px; text-align: center;"
+                        onclick="themVaoGio()">
+                    Thêm vào giỏ hàng
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // ==========================================
+        // LẤY ID SẢN PHẨM TỪ ĐƯỜNG LINK
+        // ==========================================
+        let thamSo =
+            new URLSearchParams(window.location.search);
+        let idSanPham =
+            thamSo.get("id");
+        // ==========================================
+        // DANH SÁCH SẢN PHẨM
+        // ==========================================
+
+        let danhSachSanPham = [
+            {
+                id: "1",
+                name: "Nike Air Force 1 All White",
+                price: 2500000,
+                image: "/Content/image/giay1.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "2",
+                name: "Adidas Superstar",
+                price: 1900000,
+                image: "/Content/image/Adidas Superstar.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "3",
+                name: "Adida Grand Court 2.0k",
+                price: 1350000,
+                image: "/Content/image/adida1.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "4",
+                name: "Adidas UltraBoost",
+                price: 4500000,
+                image: "/Content/image/adidas2.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "5",
+                name: "Adidas Handball Spezial",
+                price: 2800000,
+                image: "/Content/image/adidas3.avif",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "6",
+                name: "Nike SB Dunk Low Premium",
+                price: 4900000,
+                image: "/Content/image/nike1.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "7",
+                name: "Nike Air Jordan 1 Elevate Low",
+                price: 4800000,
+                image: "/Content/image/nike2.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "8",
+                name: "Nike Winflo 12",
+                price: 5300000,
+                image: "/Content/image/nike3.avif",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "9",
+                name: "Nike Free Metcon 7",
+                price: 3000000,
+                image: "/Content/image/nike4.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "10",
+                name: "Nike Vomero 18",
+                price: 4300000,
+                image: "/Content/image/nike5.avif",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "11",
+                name: "Biti's Hunter Running Nữ Màu Xanh Dương HSW011000XDG",
+                price: 1335000,
+                image: "/Content/image/biti1.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "12",
+                name: "Biti's Hunter EZ Lift Nam Màu Đen HSM012000DEN",
+                price: 1335000,
+                image: "/Content/image/biti2.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "13",
+                name: "Biti's Hunter X Nam Màu Đen HSM011700DEN",
+                price: 1035000,
+                image: "/Content/image/biti3.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "14",
+                name: "Biti's Hunter X Nam Màu Trắng HSM011700TRG",
+                price: 1035000,
+                image: "/Content/image/biti4.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "15",
+                name: "Biti's Hunter Layered Upper Nữ",
+                price: 919000,
+                image: "/Content/image/biti5.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "16",
+                name: "Giày thể thao nữ Biti’s Hunter HSW002900 phối màu",
+                price: 1335000,
+                image: "/Content/image/biti6.png",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "17",
+                name: "Giày Đôi Nam - Nữ Biti's Hunter Street HSM004700XNH/HSW004700XNH",
+                price: 685000,
+                image: "/Content/image/biti7.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "18",
+                name: "Giày Thể Thao Biti's Nữ BSW003900",
+                price: 375000,
+                image: "/Content/image/biti8.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "19",
+                name: "Giày Thể Thao Biti's Hunter Jogging Nam Màu Xám Lợt HSM004901XAL",
+                price: 735000,
+                image: "/Content/image/biti9.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "20",
+                name: "Biti's Hunter Verse Màu Đen HSM014500DEN",
+                price: 820000,
+                image: "/Content/image/biti10.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "21",
+                name: "Giày thể thao nam Bitis Hunter Street HSM011900",
+                price: 735000,
+                image: "/Content/image/biti11.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "22",
+                name: "Giày thể thao Bitis Hunter HSM012500.XNH",
+                price: 799000,
+                image: "/Content/image/biti12.png",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "23",
+                name: "Giày Thể Thao Nữ Biti's Hunter Street DSWH01300 Màu Đỏ",
+                price: 599000,
+                image: "/Content/image/biti13.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "24",
+                name: "Giày Thể Thao Nam - Nữ Biti’s Hunter X HSM002900KEM",
+                price: 1220000,
+                image: "/Content/image/biti14.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "25",
+                name: "Giày Nike Court Vision Low Pure Platinum White HM9862",
+                price: 1990000,
+                image: "/Content/image/nike6.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "26",
+                name: "Giày Nike Air Jordan 1 Low SE Coconut Milk Black HQ3437",
+                price: 3350000,
+                image: "/Content/image/nike7.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "27",
+                name: "Giày chạy bộ nam Nike Invincible 3 DR2615-102",
+                price: 2000000,
+                image: "/Content/image/nike8.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "28",
+                name: "Giày Nike Air Jordan 1 Low Bred Toe 553558-612",
+                price: 3890000,
+                image: "/Content/image/nike9.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "29",
+                name: "Giày Adidas Equipment Cloud White Blue Core Black GW8919",
+                price: 1100000,
+                image: "/Content/image/adidas5.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "30",
+                name: "Giày adidas Campus 2",
+                price: 2190000,
+                image: "/Content/image/adidas6.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "31",
+                name: "GIÀY ADIDAS SAMBA OG 'CLOUD WHITE' ID1480",
+                price: 1200000,
+                image: "/Content/image/adidas7.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "32",
+                name: "Giày Golf Da Đinh Liền S2G 26",
+                price: 3100000,
+                image: "~/Content/image/adidas8.avif",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "33",
+                name: "Giày Adidas Samba OG ‘White Hazy Green’ IH2752",
+                price: 3100000,
+                image: "/Content/image/adidas9.png",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "34",
+                name: "Giày Nike Court Vision Low Pure Platinum White HM9862",
+                price: 1990000,
+                image: "/Content/image/puma1.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "35",
+                name: "Giày Nike Air Jordan 1 Low SE Coconut Milk Black HQ3437",
+                price: 3350000,
+                image: "/Content/image/puma2.avif",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "36",
+                name: "Giày Thể Thao Suede Classic Unisex",
+                price: 2300000,
+                image: "/Content/image/puma3.avif",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "37",
+                name: "Giày Thể Thao PRM PUMA Tackle Unisex",
+                price: 1700000,
+                image: "/Content/image/puma4.avif",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "38",
+                name: "Giày thể thao da lộn Arizona",
+                price: 1500000,
+                image: "/Content/image/puma5.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "39",
+                name: "Giày thể thao Basket Classic XXI",
+                price: 1260000,
+                image: "/Content/image/puma6.avif",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "40",
+                name: "Giày Thời Trang PUMA Unisex Palermo Poised Pink-Gold Moon Màu Hồng",
+                price: 1750000,
+                image: "/Content/image/puma7.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "41",
+                name: "Giày Puma Suede Bulk Nam - Navy Nâu",
+                price: 1890000,
+                image: "/Content/image/puma8.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "42",
+                name: "Giày Sneaker Chính hãng Puma Palermo Green Vine Clementine - Xanh lá",
+                price: 2990000,
+                image: "/Content/image/9.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "43",
+                name: "Puma Speedcat OG Red",
+                price: 2450000,
+                image: "/Content/image/puma10.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "44",
+                name: "GIÀY SNEAKER UNISEX ASICS GEL-1130",
+                price: 2799000,
+                image: "/Content/image/asics1.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "45",
+                name: "Giày Pickleball Tennis Asics GeL-Resolution X Nam",
+                price: 3290000,
+                image: "/Content/image/asics2.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "46",
+                name: "Giày Asics Solition Speed 3 Huddle Yellow Blue Coast 1042A250-750",
+                price: 2800000,
+                image: "/Content/image/asic3.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "47",
+                name: "Giày chạy bộ nam Asics Magic Speed 4",
+                price: 3000000,
+                image: "/Content/image/asic4.jpg",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "48",
+                name: "Giày Tennis Asics Court FF 2 White Mako Blue",
+                price: 2200000,
+                image: "/Content/image/asics6.png",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "49",
+                name: "Giày Thể Thao Asics Court MZ Cream Black Gum 1203A127-75",
+                price: 2540000,
+                image: "/Content/image/asics7.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            },
+            {
+                id: "50",
+                name: "Giày Tennis Asics Court FF 3 Novak",
+                price: 3190000,
+                image: "/Content/image/asics5.webp",
+                description:
+                    "Dòng giày quốc dân với thiết kế da trắng cao cấp, bền bỉ và cực kỳ dễ phối đồ."
+            }
+        ];
+
+        // ==========================================
+        // TÌM SẢN PHẨM
+        // ==========================================
+        let sanPhamDangXem =
+            danhSachSanPham.find(function (sanPham) {
+                return sanPham.id === idSanPham;
+            });
+        // ==========================================
+        // HIỂN THỊ SẢN PHẨM
+        // ==========================================
+
+        if (sanPhamDangXem) {
+
+            document.querySelector(".detail-image img").src =
+                sanPhamDangXem.image;
+
+            document.querySelector(".shoe-name").innerText =
+                sanPhamDangXem.name;
+
+            document.querySelector(".shoe-price").innerText =
+                sanPhamDangXem.price.toLocaleString("vi-VN") + "đ";
+
+            document.querySelector(".detail-info p").innerText =
+                sanPhamDangXem.description;
+
+        }
+        // ==========================================
+        // CHỌN SIZE
+        // ==========================================
+        let sizeDaChon = "40"
+        function selectSize(element) {
+            let cacSize =
+                document.querySelectorAll(".size-box");
+            cacSize.forEach(function (size) {
+                size.classList.remove("active");
+            });
+            element.classList.add("active");
+            sizeDaChon =
+                element.innerText;
+        }
+        // ==========================================
+        // THÊM VÀO GIỎ HÀNG
+        // ==========================================
+
+        function themVaoGio() {
+
+            let sanPham = {
+
+                name: sanPhamDangXem.name,
+
+                price: sanPhamDangXem.price,
+
+                image: sanPhamDangXem.image,
+
+                size: sizeDaChon,
+
+                quantity: 1
+
+            };
+            let gioHang =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+            gioHang.push(sanPham);
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(gioHang)
+            );
+            alert("Đã thêm sản phẩm vào giỏ hàng!");
+            window.location.href =
+                "/Home/GioHang";
+        }
+    </script>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section trai">
+                <h3>VỀ ELLA STORE</h3>
+                <p>Hệ thống thời trang giày dép uy tín, chất lượng hàng đầu.</p>
+                <p>Địa chỉ: 123 Đường ABC, TP.HCM</p>
+                <p>Hotline: 0123 456 789</p>
+            </div>
+            <div class="footer-section trai">
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <p><a href="#">Hướng dẫn mua hàng</a></p>
+                <p><a href="#">Chính sách đổi trả</a></p>
+                <p><a href="#">Chính sách bảo mật</a></p>
+                <p><a href="#">Phương thức thanh toán</a></p>
+            </div>
+            <div class="footer-section phai">
+                <h3>CHÍNH SÁCH</h3>
+                <p><a href="#">Chính sách vận chuyển</a></p>
+                <p><a href="#">Chính sách kiểm hàng</a></p>
+                <p><a href="#">Quy định chung</a></p>
+            </div>
+            <div class="footer-section phai">
+                <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
+                <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+                <p><a href="#">TikTok</a> | <a href="#">Shopee</a></p>
+                <h3 style="margin-top: 15px; font-size: 15px;">ĐĂNG KÝ NHẬN TIN</h3>
+                <p style="font-size: 13px; color: #aaa;">Nhận mã giảm giá và sản phẩm mới sớm nhất.</p>
+                <p>&copy; 2026 ELLA Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
