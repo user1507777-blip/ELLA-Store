@@ -40,12 +40,6 @@
         </table>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2026 ELLA Store. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script>
         window.onload = function() {
             var donMoi = JSON.parse(localStorage.getItem('donHangCuaKhach'));
@@ -92,7 +86,7 @@
         function xemChiTiet(maDon) {
             /*Lưu mã đơn được chọn và chuyển sang trang chi tiết*/
             localStorage.setItem('maDonDangXem', maDon);
-            window.location.href = "chitietmuahang.html";
+            window.location.href = "/Home/Chitietmuahang";
         }
     </script>
 </body>
