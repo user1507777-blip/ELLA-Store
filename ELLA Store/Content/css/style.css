@@ -1,39 +1,39 @@
 /*  1. ĐỊNH DẠNG CƠ BẢN CHO TOÀN TRANG (RESET LAYOUT)  */
 * {
-    margin: 0; /* Loại bỏ khoảng cách thừa bên ngoài của tất cả các thẻ mặc định */
-    padding: 0; /*Loại bỏ khoảng cách đệm bên trong của tất cả các thẻ mặc định */
-    box-sizing: border-box; /*Giữ cố định kích thước ô, không cho khung bị vỡ khi ta thêm padding */
-    font-family: 'Times New Roman', Times, serif !important; /*Ép toàn bộ chữ trên web hiển thị theo font Arial dễ nhìn */
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Times New Roman', Times, serif !important; 
 }
 
 body {
-    color: #443a3a; /*Đổi màu chữ toàn trang thành màu xám đậm cho tinh tế */
-    background-color: #fff9f1; /*Đặt nền của trang web là màu trắng */
+    color: #443a3a; 
+    background-color: #fff9f1; 
 }
 
 .container-custom {
-    width: 100%; /*Trên màn hình điện thoại, khối này sẽ tràn hết 100% chiều rộng */
-    max-width: 1200px; /*Trên máy tính, giới hạn chiều rộng tối đa là 1200px để chữ không bị giãn quá xa */
-    margin: 0 auto; /*Căn rìa tự động để đưa toàn bộ nội dung trang web nằm chính giữa màn hình */
-    padding: 0 15px; /*Tạo khoảng cách đệm 15px ở hai bên rìa để chữ không bị dính sát mép */
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 15px; 
 }
 
-/* 2. THANH ĐẦU TRANG & MENU ĐIỀU HƯỚNG (HEADER & MENU - Trang 15, 18, 22) */
+/* 2. THANH ĐẦU TRANG & MENU ĐIỀU HƯỚNG (HEADER & MENU) */
 header {
-    background-color: #ffffff;
+    background-color: #222;
     padding: 20px;
-    display: flex; /*Kích hoạt hộp linh hoạt Flexbox để sắp xếp các phần tử bên trong */
-    justify-content: space-between; /*Đẩy chữ ELLA sang góc trái, và Giỏ hàng sang góc phải */
-    align-items: center; /*Căn cho Logo và Giỏ hàng thẳng hàng nhau theo chiều dọc */
-    border-bottom: 1px solid #eee; /*Kẻ một đường thẳng mờ dưới chân Header để ngăn cách với Menu */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid #eee;
 }
 
 .logo h1, .logo a {
-    font-size: 28px; /*Phóng to tên thương hiệu ELLA */
-    letter-spacing: 5px; /*Tạo khoảng cách giữa các chữ E-L-L-A cho sang trọng */
-    text-transform: uppercase; /*Ép chữ phải viết hoa hoàn toàn */
+    font-size: 28px; 
+    letter-spacing: 5px;
+    text-transform: uppercase; 
     text-decoration: none; /*Xóa bỏ đường gạch chân mặc định của thẻ liên kết */
-    color: #53a0ae; /*Đặt chữ màu đen tuyền */
+    color: #ffffff; /*Đặt chữ màu đen tuyền */
     font-weight: bold; /*Làm đậm chữ */
 }
 
@@ -51,11 +51,11 @@ header {
     position: absolute; /* Cho phép chấm đỏ bay tự do không phụ thuộc vào chữ xung quanh */
     top: -8px;
     right: 10px; /* Đẩy chấm đỏ lệch lên trên và sang phải của icon giỏ hàng */
-    /* background-color: rgb(245, 6, 6);             /*Đặt nền màu đỏ để gây sự chú ý */
+    /* background-color: rgb(245, 6, 6); */
     /* color: white;                      /* Chữ số hiển thị bên trong màu trắng */
     font-size: 100px; /*Thu nhỏ chữ số lại cho vừa vặn */
     padding: 5px 10px; /*Tạo độ rộng vừa phải cho chấm đỏ */
-    border-radius: 100%; /*Bo tròn góc 50% để biến cái khung thành hình tròn xoe */
+    border-radius: 100%; 
 }
 
 .main-menu {
@@ -82,16 +82,16 @@ header {
                 color: #ff5e15; /*Khi người dùng rà chuột vào chữ menu, chữ tự đổi sang màu cam */
             }
 
-/* 3. KHU VỰC QUẢNG CÁO LỚN (BANNER LOREMOUS - Trang 16) */
+/* 3. KHU VỰC QUẢNG CÁO LỚN (BANNER LOREMOUS) */
 .banner {
-    background-color: #ede7e7; /*Đặt nền màu xám nhạt */
-    margin: 0 auto; /*Tạo khoảng cách trống ở trên và ở dưới banner là 30px */
+    background-color: #ede7e7; /*Đặt nền màu */
+    margin: 0 auto; /*Tạo khoảng cách trống ở trên và ở dưới banner */
     display: flex; /*Bật Flexbox để chia đôi banner làm 2 phần trái và phải */
     align-items: center; /*Căn chữ bên trái và hình ảnh bên phải thẳng hàng dọc với nhau */
 }
 
 .banner-content {
-    flex: 1; /*Ép phần chứa chữ chiếm đúng 50% chiều rộng bên trái */
+    flex: 1; 
     padding-left: 60px; /*Đẩy chữ lùi vào trong 60px để không bị dính sát rìa */
     text-align: left; /*Căn lề văn bản thẳng bên vế trái */
 }
@@ -171,7 +171,7 @@ header {
         gap: 15px;
     }
 }
-/* 4. CHIA KHUNG HIỂN THỊ SẢN PHẨM (PRODUCT GRID - Trang 19, 20)*/
+/* 4. CHIA KHUNG HIỂN THỊ SẢN PHẨM (PRODUCT GRID)*/
 .section-title {
     text-align: center;
     font-size: 20px;
@@ -463,8 +463,8 @@ header {
 /* Khung chứa toàn bộ nút 3 gạch và menu */
 .menu-container {
     position: relative; /* Làm mốc để menu con định vị theo khung này */
-    margin-left: 20px; /* Cách mép trái 40px */
-    margin-top: 20px; /* Cách phía trên 20px */
+    margin-left: 20px; /* Cách mép trái */
+    margin-top: 20px; /* Cách phía trên */
 }
 
 
@@ -549,15 +549,17 @@ header {
     gap: 20px 60px;
     justify-content: center;
     width: 100%;
-    max-width: 950px;
-    margin: 0 auto;
+   /* max-width: 950px;*/
+  /*  margin: 0 auto;*/
 }
 .trai {
     grid-column: 1;
+    margin-left: 100px;
 }
 .phai {
     grid-column: 2;
     margin-top: -110px;
+    margin-right: 100px;
 }
 .footer a {
         color: #fff;
@@ -834,805 +836,3 @@ order-note-section textarea {
             display: none;
         }
 }
-
-/* 2. THANH ĐẦU TRANG & MENU ĐIỀU HƯỚNG (HEADER & MENU - Trang 15, 18, 22) */
-header {
-    background-color: #ffffff;
-    padding: 20px;
-    display: flex;                     /*Kích hoạt hộp linh hoạt Flexbox để sắp xếp các phần tử bên trong */
-    justify-content: space-between;    /*Đẩy chữ ELLA sang góc trái, và Giỏ hàng sang góc phải */
-    align-items: center;               /*Căn cho Logo và Giỏ hàng thẳng hàng nhau theo chiều dọc */
-    border-bottom: 1px solid #eee;     /*Kẻ một đường thẳng mờ dưới chân Header để ngăn cách với Menu */
-}
-
-.logo h1, .logo a {
-    font-size: 28px;                   /*Phóng to tên thương hiệu ELLA */
-    letter-spacing: 5px;               /*Tạo khoảng cách giữa các chữ E-L-L-A cho sang trọng */
-    text-transform: uppercase;         /*Ép chữ phải viết hoa hoàn toàn */
-    text-decoration: none;             /*Xóa bỏ đường gạch chân mặc định của thẻ liên kết */
-    color: #53a0ae;                       /*Đặt chữ màu đen tuyền */
-    font-weight: bold;                 /*Làm đậm chữ */
-}
-
-.cart { 
-    position: relative;                /*Đặt khối này làm gốc tọa độ để định vị chấm đỏ số lượng */
-}
-
-.cart a { 
-    color: #333; 
-    font-size: 22px; 
-    text-decoration: none; 
-}
-
-.cart-count {
-    position: absolute;                /* Cho phép chấm đỏ bay tự do không phụ thuộc vào chữ xung quanh */
-    top: -8px; 
-    right: 10px;                      /* Đẩy chấm đỏ lệch lên trên và sang phải của icon giỏ hàng */
-   /* background-color: rgb(245, 6, 6);             /*Đặt nền màu đỏ để gây sự chú ý */
-   /* color: white;                      /* Chữ số hiển thị bên trong màu trắng */
-    font-size: 100px;                   /*Thu nhỏ chữ số lại cho vừa vặn */
-    padding: 5px 10px;                  /*Tạo độ rộng vừa phải cho chấm đỏ */
-    border-radius: 100%;               /*Bo tròn góc 50% để biến cái khung thành hình tròn xoe */
-}
-
-.main-menu { 
-    padding: 5px 0; 
-    border-bottom: 1px solid #eee; 
-}
-
-.main-menu ul { 
-    list-style-type: none;             /*Xóa bỏ các dấu chấm tròn đầu dòng mặc định của danh sách <ul> */
-    display: flex;                     /*Bật Flexbox để các mục menu xếp thành hàng ngang */
-    justify-content: center;           /*Đưa toàn bộ các mục menu ra nằm chính giữa trang web */
-    gap: 30px;                         /*Tạo khoảng cách đều nhau 30px giữa các chữ menu */
-}
-
-.main-menu ul li a { 
-    text-decoration: none; 
-    color: #333; 
-    font-weight: bold; 
-    font-size: 13px; 
-    text-transform: uppercase; 
-}
-
-.main-menu ul li a:hover { 
-    color: #ff5e15;                    /*Khi người dùng rà chuột vào chữ menu, chữ tự đổi sang màu cam */
-}
-
-/* 3. KHU VỰC QUẢNG CÁO LỚN (BANNER LOREMOUS - Trang 16) */
-.banner { 
-    background-color: #ede7e7;         /*Đặt nền màu xám nhạt */
-    margin: 0 auto;                    /*Tạo khoảng cách trống ở trên và ở dưới banner là 30px */
-    display: flex;                     /*Bật Flexbox để chia đôi banner làm 2 phần trái và phải */
-    align-items: center;               /*Căn chữ bên trái và hình ảnh bên phải thẳng hàng dọc với nhau */
-}
-
-.banner-content { 
-    flex: 1;                           /*Ép phần chứa chữ chiếm đúng 50% chiều rộng bên trái */
-    padding-left: 60px;                /*Đẩy chữ lùi vào trong 60px để không bị dính sát rìa */
-    text-align: left;                  /*Căn lề văn bản thẳng bên vế trái */
-}
-
-.banner-content h2 { 
-    font-size: 42px; 
-    letter-spacing: 6px; 
-    margin-bottom: 15px; 
-    font-weight: 400; 
-}
-
-.btn {
-    display: inline-block;             /*--// Cho phép chỉnh kích thước padding cho nút bấm */
-    padding: 12px 28px;                /*--// Định độ cao và độ rộng của nút bấm */
-    background-color: #7d5555;            /*--// Tô nền nút bấm màu đen phẳng tối giản chuẩn Mẫu 5 */
-    color: #fff;                       /*--// Chữ bên trong nút màu trắng */
-    text-decoration: none; 
-    font-weight: bold; 
-    font-size: 12px; 
-    text-transform: uppercase; 
-    letter-spacing: 2px;
-}
-
-.btn:hover { 
-    background-color: #333;            /*--// Khi rà chuột vào, nút đen chuyển sang màu xám đậm để tạo phản hồi bấm */
-}
-
-.banner-image { 
-    flex: 1;/*--// Ép phần chứa hình ảnh chiếm đúng 50% chiều rộng bên phải */
-    
-}
-
-.banner-image img { 
-    width: 100%;                       /*--// Ảnh tự co giãn tràn hết kích thước của khối bọc nó */
-    height: auto; 
-    display: block;                    /*--// Xóa bỏ khoảng hở thừa vài pixel dưới chân ảnh mặc định */
-}
-/*banner-group ở giữa trang home*/
-    /* Khung chứa cả 3 ảnh */
-.banner-group {
-  display: flex !important;/* Sắp xếp các phần tử nằm trên 1 hàng ngang */
-  flex-direction: row !important;/* Định dạng thẻ ảnh */
-  flex-wrap: nowrap !important; /* KHÔNG CHO PHÉP RỚT DÒNG */
-  justify-content: center;   /* Căn giữa các ảnh trong khung */
-  gap: 20px;                 /* Khoảng cách giữa các hình ảnh */
-  width: 100%;               /* Chiều rộng khung chứa */
-  max-width: 1200px;         /* Chiều rộng tối đa của khu vực giữa trang */
-  margin: 30px auto;         /* Căn giữa toàn bộ thẻ chứa ra giữa trang web */
-  padding: 0 15px;           /* Lề trong tránh chạm viền màn hình nhỏ */
-  box-sizing: border-box;
-}
-
-/* Mỗi ô chứa ảnh */
-.banner-i {
-  flex: 1;                   /* Chia đều 3 hình bằng nhau */
- min-width: 0;
-  overflow: hidden;          /* Ẩn phần thừa nếu có hiệu ứng phóng to */
-}
-
-    .banner-i img {
-        width: 100%; /* Ảnh co giãn theo độ rộng ô chứa */
-        max-width: 100%;
-        height: 250px; /* Giữ đúng tỷ lệ khung hình */
-        object-fit: cover; /* Cắt ảnh nếu vượt quá khung */
-        display: block; /* Bỏ khoảng trống thừa dưới chân ảnh */
-        transition: transform 0.3s ease; /* Hiệu ứng mượt khi di chuột vào (tùy chọn) */
-    }
-
-/* Hiệu ứng phóng to nhẹ khi di chuột vào (Tùy chọn) */
-.banner-i:hover img {
-  transform: scale(1.03);
-}
-
-/* Tối ưu hóa cho giao diện điện thoại (Responsive) */
-@media (max-width: 768px) {
-  .banner-group {
-    flex-direction: column;  /* Khi xem trên điện thoại, 3 ảnh sẽ xếp chồng dọc */
-    gap: 15px;
-  }
-}
-/* 4. CHIA KHUNG HIỂN THỊ SẢN PHẨM (PRODUCT GRID - Trang 19, 20)*/
-.section-title { 
-    text-align: center; 
-    font-size: 20px; 
-    letter-spacing: 4px; 
-    margin: 40px 0 20px 0; 
-    text-transform: uppercase; 
-    font-weight: bold; 
-}
-
-.product-grid { 
-    display: grid;                     /*--// Bật tính năng Grid để chia màn hình dưới dạng ô cờ vuông */
-    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr)); /*--// Định nghĩa: Tự động chia đều không gian thành đúng 5 cột bằng nhau */
-    gap: 20px;                         /*--// Khoảng cách trống giữa các ô sản phẩm là 20px */
-    margin-bottom: 50px; 
-}
-
-.product-item {
-    text-align: center; 
-    border: 1px solid #f1f1f1;         /*--// Kẻ viền xám siêu mảnh bọc quanh mỗi đôi giày */
-    padding: 10px; 
-    background-color: #fff;
-    text-decoration: none; 
-    color: #4d3b3b; 
-    display: block; 
-    transition: transform 0.2s;        /*--// Tạo hiệu ứng chuyển động mượt mà kéo dài 0.2 giây */
-}
-
-.product-item:hover { 
-    transform: translateY(-5px);       /*--// Khi rà chuột vào, đôi giày sẽ nhích nhẹ lên trên 5px tạo cảm giác nổi 3D */
-}
-
-.product-item img { 
-    width: 150px; 
-    height: auto; 
-}
-
-.product-item h3 { 
-    font-size: 14px; 
-    margin: 12px 0 6px 0; 
-    color: #555; 
-    font-weight: normal; 
-}
-
-.product-item .price { 
-    font-weight: bold; 
-    font-size: 14px; 
-    color: #000; 
-}
-
-/*5. BỐ CỤC TRANG CHI TIẾT SẢN PHẨM (FLEX DETAILS) */
-.detail-wrapper { 
-    display: flex;                     /*--// Bật Flexbox chia trang chi tiết làm 2 nửa trái và phải */
-    gap: 50px;                         /*--// Khoảng cách giữa vùng ảnh và vùng chữ là 50px */
-    margin-top: 30px; 
-    margin-bottom: 50px; 
-}
-
-.detail-image { 
-    flex: 1;                           /*--// Vùng chứa ảnh to chiếm 1 nửa bên trái */
-}
-
-.detail-image img { 
-    width: 300px; 
-    height: auto; 
-    border: 1px solid #f1f1f1; 
-}
-
-.detail-info { 
-    flex: 1;                           /*--// Vùng chứa chữ chiếm 1 nửa bên phải */
-    display: flex; 
-    flex-direction: column;            /*--// Ép các thành phần (Tên, Giá, Nút mua) xếp theo hàng dọc từ trên xuống */
-    gap: 20px;                         /*--// Khoảng trống cách đều giữa các hàng chữ dọc là 20px */
-}
-
-.shoe-name { 
-    font-size: 28px; 
-    font-weight: bold; 
-}
-
-.shoe-price { 
-    font-size: 24px; 
-    color: #000; 
-    font-weight: bold; 
-}
-
-.size-section h4 { 
-    margin-bottom: 10px; 
-    font-size: 14px; 
-    text-transform: uppercase; 
-    color: #666; 
-}
-
-.size-options { 
-    display: flex;                     /*Bật Flexbox để các ô Size giày xếp hàng ngang */
-    gap: 10px; 
-}
-
-.size-box { 
-    border: 1px solid #ccc; 
-    padding: 10px 20px; 
-    cursor: pointer;                   /*Khi đưa chuột vào ô Size, con trỏ chuột tự đổi thành hình bàn tay */
-    font-weight: bold; 
-}
-
-.size-box:hover, 
-.size-box.active { 
-    background-color: #000;            /*Khi được chọn (Active), ô size đổi sang màu nền đen */
-    color: #fff;                       /*Chữ số size chuyển sang màu trắng */
-    border-color: #000; 
-}
-
-/* 6. BỐ CỤC BẢNG GIỎ HÀNG (CART TABLE) */
-.cart-table { 
-    width: 100%; 
-    border-collapse: collapse;         /*--// Gộp các đường viền của bảng lại làm một để nhìn mảnh, sạch sẽ */
-    margin-bottom: 30px; 
-}
-
-.cart-table th { 
-    border-bottom: 2px solid #000;     /*--// Kẻ đường viền đen đậm dưới chân thanh tiêu đề bảng */
-    padding: 15px; 
-    text-align: left; 
-    text-transform: uppercase; 
-    font-size: 13px; 
-}
-
-.cart-table td { 
-    padding: 20px 15px; 
-    border-bottom: 1px solid #eee;     /*--// Kẻ đường viền mảnh ngăn cách giữa các dòng sản phẩm */
-    vertical-align: middle;            /*--// Căn cho ảnh và chữ nằm căn đều chính giữa dòng theo chiều dọc */
-}
-
-.cart-item-info { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-}
-
-.cart-item-info img { 
-    width: 10px !important; 
-    height: 10px !important;
-    object-fit: contain; 
-}
-
-.quantity-input { 
-    width: 60px; 
-    padding: 5px; 
-    text-align: center;                /*--// Căn chữ số lượng nằm chính giữa ô nhập */
-    border: 1px solid #ccc; 
-}
-
-.btn-delete { 
-    color: red; 
-    cursor: pointer; 
-    text-decoration: underline; 
-    background: none; 
-    border: none; 
-}
-
-.cart-summary { 
-    display: flex; 
-    justify-content: flex-end;         /*--// Đẩy cái hộp tính tổng tiền dạt hẳn về bên góc phải màn hình */
-}
-
-.summary-box { 
-    border: 1px solid #eee; 
-    padding: 20px; 
-    width: 100%; 
-    max-width: 350px; 
-    background: #f9f9f9; 
-}
-
-.summary-row { 
-    display: flex; 
-    justify-content: space-between; 
-    margin-bottom: 15px; 
-    font-weight: bold; 
-}
-.cart-icon{
-    width:28px;
-    height:28px;
-    object-fit:contain;
-    vertical-align: middle;
-}
-.container-custom-cart
-{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:10px 5%;
-}
-
-
-/* 7. BỐ CỤC FORM ĐĂNG NHẬP / ĐĂNG KÝ & CHỮ BÁO LỖI VALIDATION */
-.auth-wrapper {
-    display: flex;                     /*--// Bật Flexbox chia đôi: bên trái Đăng nhập, bên phải Đăng ký */
-    gap: 80px;                         /*--// Khoảng cách giữa 2 khối form là 80px */
-    margin-top: 20px;
-    margin-bottom: 50px;
-}
-
-.auth-box { 
-    flex: 1; 
-    padding: 10px; 
-}
-
-.auth-box h2 { 
-    font-size: 20px; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    margin-bottom: 25px; 
-}
-
-.auth-box p { 
-    font-size: 14px; 
-    color: #666; 
-    margin-bottom: 20px; 
-    line-height: 1.6; 
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;            /*--// Ép chữ tiêu đề (Label) nằm bên trên và Ô nhập (Input) nằm bên dưới */
-    gap: 8px;                          /*--// Khoảng cách giữa chữ tiêu đề và ô nhập là 8px */
-    margin-bottom: 20px;
-}
-
-.form-group label { 
-    font-size: 13px; 
-    font-weight: bold; 
-    text-transform: uppercase; 
-    color: #555; 
-}
-
-.form-control {
-    padding: 12px;
-    border: 1px solid #ccc;
-    width: 100%;                       /*--// Ô nhập tự động giãn dài hết cỡ không gian cho phép */
-    font-size: 14px;
-}
-
-.form-control:focus {
-    border-color: #000;                /*--// Khi người dùng click chuột vào ô nhập dữ liệu, viền ô tự đổi sang màu đen */
-    outline: none;                     /*--// Tắt bỏ cái khung viền xanh mặc định của trình duyệt web */
-}
-
-.forgot-password { 
-    display: block; 
-    margin-top: 15px; 
-    font-size: 13px; 
-    color: #666; 
-}
-
-.error-msg {
-    color: red;                        /*--// Đặt chữ báo lỗi màu đỏ rực để cảnh báo khách đăng ký sai luật */
-    font-size: 12px;
-    font-weight: bold;                 /*--// Làm đậm chữ báo lỗi */
-    margin-top: 5px;
-    display: block;
-}
-
-/*phần lịch sử mua hàng*/
-.container {
-    width:50%; /*kích thướt*/
-    margin:auto; 
-}
-.empty-history {
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align:center;
-    min-height: calc(100vh - 80px);
-}
-
-.empty-history h1{
-    margin-bottom: 15px;
-}
-/* ================================================= */
-/* DANH MỤC Ở TRANG INDEX                            */
-/* ================================================= */
-
-
-/* Khung chứa toàn bộ nút 3 gạch và menu */
-.menu-container {
-    position: relative;      /* Làm mốc để menu con định vị theo khung này */
-    margin-left: 20px;      /* Cách mép trái 40px */
-    margin-top: 20px;       /* Cách phía trên 20px */
-}
-
-
-/* Nút 3 gạch ☰ */
-.menu-button {
-    background: none;       /* Không có màu nền */
-    border: none;           /* Bỏ đường viền mặc định của button */
-    font-size: 25px;        /* Tăng kích thước dấu 3 gạch */
-    cursor: pointer;        /* Đưa chuột vào sẽ hiện hình bàn tay */
-    padding: 0;             /* Bỏ khoảng cách bên trong button */
-}
-
-
-/* Khung danh mục xổ xuống */
-.menu-danh-muc {
-    display: none;          /* Ban đầu ẩn menu đi */
-
-    position: absolute;     /* Cho phép đặt menu ở vị trí mong muốn */
-    top: 45px;              /* Menu nằm bên dưới nút 3 gạch */
-    left: 0;                /* Menu bắt đầu từ bên trái của nút */
-
-    width: 230px;           /* Chiều rộng của khung menu */
-
-    background-color: white; /* Nền menu màu trắng */
-
-    border: 1px solid #ddd; /* Tạo đường viền xung quanh menu */
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    /* Tạo bóng xung quanh menu để nhìn giống một hộp xổ xuống */
-
-    z-index: 1000;
-    /* Đưa menu lên phía trên các thành phần khác */
-}
-
-
-/* Khi JavaScript thêm class "mo" thì menu sẽ hiện */
-.menu-danh-muc.mo {
-    display: block;         /* Chuyển menu từ ẩn thành hiện */
-}
-
-
-/* Các liên kết trong menu */
-.menu-danh-muc a {
-    display: block;         /* Mỗi liên kết chiếm một dòng riêng */
-
-    padding: 15px 20px;     /* Tạo khoảng cách bên trong mỗi mục */
-
-    color: black;           /* Màu chữ đen */
-
-    text-decoration: none;  /* Bỏ gạch chân của link */
-
-    font-weight: bold;      /* Chữ in đậm */
-}
-
-
-/* Tiêu đề "Lọai giày" */
-.menu-title {
-    padding: 15px 20px;     /* Tạo khoảng cách xung quanh chữ */
-
-    font-weight: bold;      /* Chữ Loài giày in đậm */
-}
-
-
-/* Các mục con: Nike và Adidas */
-.menu-con {
-    padding-left: 40px !important;   /* Đẩy Nike và Adidas sang bên phải để thể hiện đây là mục con của "Loài giày" */
-}
-
-
-/* Hiệu ứng khi đưa chuột vào các link */
-.menu-danh-muc a:hover {
-    background-color: #f2f2f2;    /* Khi rê chuột vào link thì nền chuyển sang màu xám nhạt */
-}
-.footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-.footer a{
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-.footer a:hover{
-text-decoration: underline;    
-}
-
-/*Ghi chú đơn hàng*/
-.order-note-section {
-    margin-top: 20px 0;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-.order-note-section h3 {
-    margin-top: 0px;
-    font-size: 18px;
-    color: #333;
-}
-.order-note-section label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-order-note-section textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-fanmily: inherit;
-    resize: vertical;
-}
-
-/*Trang lịch sử mua hàng*/
-.order-detail-container {
-    width: 80%;
-    max-width: 900px;
-    margin: 30px auto;
-}
-
-.order-detail-container h2 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.order-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.order-table th, 
-.order-table td {
-    border: 1px solid #ccc;
-    padding: 12px 10px;
-    text-align: left;
-    font-size: 14px;
-}
-
-.order-table th {
-    background: #eee;
-    font-weight: bold;
-    color: #333;
-}
-
-.order-table tr:nth-child(even) {
-    background-color: #fdfdfd;
-}
-
-.order-table button {
-    padding: 6px 12px;
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: background 0.2s ease;
-}
-
-.order-table button:hover {
-    background: #555;
-}
-
-/*trang chi tiết mua hàng*/
-.order-detail-container {
-    width: 80%;
-    max-width: 900px;
-    margin: 30px auto;
-}
-
-.order-detail-container h2, 
-.order-detail-container h3 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.order-box {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px 20px;
-    margin-bottom: 25px;
-    border-radius: 5px;
-}
-
-.order-box h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 16px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
-}
-
-.order-box p {
-    margin: 8px 0;
-    font-size: 14px;
-    color: #444;
-}
-
-.status-badge {
-    font-weight: bold;
-}
-
-.order-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.order-table th, 
-.order-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-    font-size: 14px;
-}
-
-.order-table th {
-    background: #eee;
-    font-weight: bold;
-}
-
-.summary-box {
-    margin-top: 20px;
-    text-align: right;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.summary-box p {
-    margin: 5px 0;
-}
-
-.total-price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #d9534f;
-}
-
-.back-link {
-    margin-top: 25px;
-}
-
-.back-link a {
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.back-link a:hover {
-    text-decoration: underline;
-}
-/* thanh tìm kiếm*/
-.search-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-#timKiem {
-    width: 400px;
-    height: 44px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.search-box button {
-    height: 44px;
-    padding: 0 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-/* Khung hóa đơn */
-#bill {
-    width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border: 1px solid #333;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-    /* Tiêu đề */
-    #bill h1,
-    #bill h2 {
-        text-align: center;
-    }
-/* Bảng sản phẩm */
-.bill-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-    .bill-table th,
-    .bill-table td {
-        border: 1px solid #333;
-        padding: 10px;
-        text-align: center;
-    }
-/* Tổng tiền */
-.bill-total {
-    text-align: right;
-    font-size: 20px;
-    margin-top: 25px;
-}
-/* Nút in */
-#bill button {
-    display: block;
-    margin: 25px auto 0;
-    padding: 12px 30px;
-    background: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-/* Khi in thì ẩn nút */
-@ media print {
-    body * {
-        visibility: hidden;
-    }
-
-    #bill,
-    #bill * {
-        visibility: visible;
-    }
-
-    #bill {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        margin: 0;
-        border: none;
-    }
-
-        #bill button {
-            display: none;
-        }
-}
-
